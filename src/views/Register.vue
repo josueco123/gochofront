@@ -1,44 +1,77 @@
 <template>
-  <div class="register">
-    <h1 class="title">Sign Up</h1>
-    <form action class="form" @submit.prevent="register">
-         <label class="form-label" for="#user">Usuario:</label>
-      <input
-        v-model="email"
-        class="form-input"
-        type="text"
-        id="user"
-        required
-        placeholder="Usuario"
-      >
-      <label class="form-label" for="#email">Email:</label>
-      <input
-        v-model="email"
-        class="form-input"
-        type="email"
-        id="email"
-        required
-        placeholder="Email"
-      >
-      <label class="form-label" for="#password">Contraseña:</label>
-      <input
-        v-model="password"
-        class="form-input"
-        type="password"
-        id="password"
-        placeholder="Password"
-      >
-      <label class="form-label" for="#password-repeat">Repite la contraseña:</label>
-      <input
-        v-model="passwordRepeat"
-        class="form-input"
-        type="password"
-        id="password-repeat"
-        placeholder="Password"
-      >
-      <input class="form-submit" type="submit" value="Sign Up">
-    </form>
-  </div>
+  <b-container fluid="md">
+    <div class="register">
+      <b-row class="justify-content-md-center">
+        <b-col md="auto">
+          <b-card class="text-center">
+            <h1 class="title">Registrate</h1>
+            <b-form action class="form" @submit.prevent="register">              
+              <b-form-group
+                id="input-group-1"
+                label="Usuario:"
+                label-for="user"
+              >
+              <b-form-input
+                v-model="email"
+                class="form-input"
+                type="text"
+                id="user"
+                required
+                placeholder="Usuario"
+              />
+              </b-form-group>
+
+              <b-form-group
+                id="input-group-2"
+                label="Correo:"
+                label-for="email"
+              >
+             
+              <b-form-input
+                v-model="email"
+                class="form-input"
+                type="email"
+                id="email"
+                required
+                placeholder="Email"
+              />
+              </b-form-group>
+             
+               <b-form-group
+                id="input-group-3"
+                label="Contraseña:"
+                label-for="password"
+              >
+              <b-form-input
+                v-model="password"
+                class="form-input"
+                type="password"
+                id="password"
+                placeholder="Password"
+              />
+              </b-form-group>
+            
+              <b-form-group
+                id="input-group-4"
+                label="Repetir Contraseña:"
+                label-for="password-repeat"
+              >
+              <b-form-input
+                v-model="passwordRepeat"
+                class="form-input"
+                type="password"
+                id="password-repeat"
+                placeholder="Password"
+              />
+              </b-form-group>
+                <b-button type="submit" variant="primary">Registrarse </b-button>
+             
+            </b-form>           
+          </b-card>
+        </b-col>
+      </b-row>
+    </div>
+  </b-container>
 </template>
 
 <script>
@@ -49,16 +82,17 @@ export default {
     user: "",
     email: "",
     password: "",
-    passwordRepeat: ""
+    passwordRepeat: "",
   }),
   methods: {
     async register() {
-    
-        await UserApi.CreateUser(this.user,this.email,this.password).then((response) => {
-            console.log(response);
-        });
-    }
-  }
+      await UserApi.CreateUser(this.user, this.email, this.password).then(
+        (response) => {
+          console.log(response);
+        }
+      );
+    },
+  },
 };
 </script>
 
