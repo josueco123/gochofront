@@ -1,4 +1,5 @@
 <template>
+<img alt="Vue logo" src="../assets/logo.png">
   <b-container fluid="md">    
       <div class="login">
         <b-row  class="justify-content-md-center">
@@ -70,7 +71,7 @@ export default {
           sessionStorage.setItem("name", response.data.name);
           sessionStorage.setItem("id", response.data.id);
 
-          this.$router.push("/test");
+          this.$router.push("/task");
         }
       });
 
