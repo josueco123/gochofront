@@ -3,15 +3,14 @@
   <div id="nav">
     <b-button-toolbar justify aria-label="Toolbar with justify">
       <b-button-group class="mx-1">
-        <b-button variant="outline-secondary">
-          <router-link to="/task">Mis Tareas</router-link>
-        </b-button>
-        <b-button variant="outline-secondary">
-          <router-link to="/create">Agregar Tareas</router-link>
-        </b-button>
+        <router-link class="nav-link" to="/task">Mis Tareas</router-link>
+        <router-link class="nav-link" to="/create">Agregar Tareas</router-link>
       </b-button-group>
 
-      <b-dropdown variant="link" class="mx-1" right text="">
+      <b-dropdown variant="link" right >
+        <template #button-content>
+          <b-icon icon="person-fill" aria-hidden="true"></b-icon> {{ user }}
+        </template>       
         <b-dropdown-header id="dropdown-header-label">
           {{ user }}
         </b-dropdown-header>
@@ -42,5 +41,8 @@ export default {
 #nav {
   background-color: #212122;
   padding: 6px;
+}
+a.nav-link {
+  text-decoration: none;
 }
 </style>

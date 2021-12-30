@@ -1,7 +1,7 @@
 <template>
   <NavBar />
   <h2 style="margin: 10px">Mis Tareas</h2>
-  <b-dropdown text="Ver: " variant="primary" class="m-1" dropright>
+  <b-dropdown text="Ver: " style="margin: 10px;" variant="primary" class="m-1" dropright>
     <b-dropdown-item v-on:click="taskpending()"
       >Tareas Pendientes</b-dropdown-item
     >

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ENDPOINT_PATH = "http://localhost:8000/";
+const ENDPOINT_PATH = "https://devtest.mincrix.com/public/";
 
 const config = {
   headers: {
